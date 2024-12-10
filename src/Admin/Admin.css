@@ -1,0 +1,122 @@
+/* AddPolitician.css */
+
+.add-politician-container {
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .add-politician-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .form-group {
+    text-align: left;
+  }
+  
+  label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  input, select {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .submit-btn {
+    background-color: #6200ea;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    background-color: #4500b5;
+  }
+  
+  .message {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #d9534f;
+  }
+/*   
+  ViewPolitician.js */
+
+  .view-politician-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .view-politician-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .politician-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .politician-table th,
+  .politician-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .politician-table th {
+    background-color: #6200ea;
+    color: white;
+  }
+  
+  .politician-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .politician-table tr:hover {
+    background-color: #ddd;
+  }
+  
+  .no-data {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+  }
+  
+  .error {
+    color: red;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+/* 
+  AdminHome.css */
+
+  .cards{
+    display: flex;
+    margin: 0 auto;
+  }
+
+  .cardcitizen-count icon{}
