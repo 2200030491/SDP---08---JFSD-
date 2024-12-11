@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import  config  from './config';
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -41,7 +42,7 @@ const ContactUs = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:2020/citizen/send-email', formData);
+      const response = await axios.post(`${config.url}/citizen/send-email`, formData);
       console.log('Response:', response.data);
       alert('Form submitted successfully!');
     } catch (error) {

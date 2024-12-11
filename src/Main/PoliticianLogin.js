@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./NavBar.css";
-
+import  config  from './config';
 export default function PoliticianLogin({onPoliticianLogin})
  {
   const [formData, setFormData] = useState({
@@ -33,7 +33,7 @@ export default function PoliticianLogin({onPoliticianLogin})
     try {
       // Send POST request to backend
       const response = await axios.post(
-        "http://localhost:2020/politician/politicianlogin", 
+        `${config.url}/politician/politicianlogin`, 
         null, 
         {
           params: { email: formData.email, password: formData.password },

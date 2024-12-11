@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { config } from '../Main/config';
 
 const AddCitizen = () => {
     const [formData, setFormData] = useState({
@@ -83,7 +84,7 @@ const AddCitizen = () => {
 
         try {
             // Make POST request to backend
-            const response = await axios.post('http://localhost:2020/admin/addcitizen ', formData);
+            const response = await axios.post(`${config.url}/admin/addcitizen`, formData);
             if (response.status === 200) {
                 setMessage('Citizen Added successful!');
                 // Reset form data

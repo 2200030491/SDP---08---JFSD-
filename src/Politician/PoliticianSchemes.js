@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./PoliticianProfile.css"; // Form CSS
-
+import config from "../Main/config";
 export default function PoliticianSchemes() {
   const [formData, setFormData] = useState({
     name: "",
@@ -20,7 +20,7 @@ export default function PoliticianSchemes() {
 
   const fetchSchemes = async () => {
     try {
-      const response = await axios.get("http://localhost:2020/politician/getschemes");
+      const response = await axios.get(`${config.url}/politician/getschemes`);
       setSchemes(response.data); // Set schemes from the backend
     } catch (error) {
       console.error("Error fetching schemes:", error);
@@ -37,7 +37,7 @@ export default function PoliticianSchemes() {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:2020/politician/insertscheme", formData);
+      const response = await axios.post(`${config.url}/politician/insertscheme`, formData);
 
       if (response.status === 200) {
         setMessage("Scheme added successfully!");

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./NavBar.css";
 import { useNavigate } from "react-router-dom";
+import  config  from './config';
 
 export default function AdminLogin({ onAdminLogin }) {
   const [formData, setFormData] = useState({
@@ -33,7 +34,7 @@ export default function AdminLogin({ onAdminLogin }) {
     try {
       // Send POST request to backend
       const response = await axios.post(
-        "http://localhost:2020/admin/adminlogin",
+        `${config.url}/admin/adminlogin`,
         null,
         {
           params: {

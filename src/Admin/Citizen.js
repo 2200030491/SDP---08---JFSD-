@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-
+import config from '../Main/config';
 export default function Citizen() {
   const [citizen, setCitizen] = useState(null);
   const { id } = useParams();
@@ -9,7 +9,7 @@ export default function Citizen() {
   const fetchCitizen = async () => {
     if (id) {
       try {
-        const response = await axios.get(`http://localhost:2020/admin/viewcitizenbyid?id=${id}`);
+        const response = await axios.get(`${config.url}/admin/viewcitizenbyid?id=${id}`);
         setCitizen(response.data);
         console.log(response.data);
       } catch (error) {

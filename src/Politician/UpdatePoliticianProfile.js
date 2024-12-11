@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./PoliticianProfile.css";
-
+import config from "../Main/config";
 const UpdatePoliticianProfile = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -33,7 +33,7 @@ const UpdatePoliticianProfile = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.put(`http://localhost:2020/politician/updatepoliticianprofile/${formData.id}`,
+      const response = await axios.put(`${config.url}/politician/updatepoliticianprofile/${formData.id}`,
         formData
       );
 

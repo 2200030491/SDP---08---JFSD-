@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../Citizen/CitizenNavBar.css';
-
+import config from '../Main/config';
 export default function PoliticianIssues() {
   const [politicianData, setPolticianData] = useState('');
   const [issues, setIssues] = useState([]);
@@ -13,7 +13,7 @@ export default function PoliticianIssues() {
       setPolticianData(parsedPoliticianData);
 
       // Fetch issues for the logged-in citizen
-      axios.get(`http://localhost:2020/politician/viewallissues`)
+      axios.get(`${config.url}/politician/viewallissues`)
         .then((response) => {
           setIssues(response.data);
         })

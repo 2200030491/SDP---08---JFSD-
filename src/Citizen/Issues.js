@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './CitizenProfile.css';
 import axios from 'axios';
+import config from '../Main/config';
 
 function Issues() {
   const [formData, setFormData] = useState({
@@ -29,7 +30,7 @@ function Issues() {
     try {
       const citizenId = citizenData.id;
       const response = await axios.post(
-        `http://localhost:2020/citizen/${citizenId}/issues`,
+        `${config.url}/citizen/${citizenId}/issues`,
         formData
       );
 

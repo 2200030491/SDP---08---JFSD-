@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import config from "../Main/config";
 
 export default function ViewPolitician() {
   const [politicians, setPoliticians] = useState([]);
@@ -11,7 +12,7 @@ export default function ViewPolitician() {
   useEffect(() => {
     const fetchPoliticians = async () => {
       try {
-        const response = await axios.get("http://localhost:2020/admin/viewpoliticians");
+        const response = await axios.get(`${config.url}/admin/viewpoliticians`);
         setPoliticians(response.data);
       } catch (error) {
         console.error("Error fetching politicians:", error);

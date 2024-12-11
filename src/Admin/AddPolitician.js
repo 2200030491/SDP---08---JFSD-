@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Admin.css";
+import config from "../Main/config";
 
 const AddPolitician = () => {
   const [formData, setFormData] = useState({
@@ -40,7 +41,7 @@ const AddPolitician = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:2020/admin/addpolitician", formData);
+      const response = await axios.post(`${config.url}/admin/addpolitician`, formData);
 
       if (response.status === 200) {
         setMessage("Politician added successfully!");

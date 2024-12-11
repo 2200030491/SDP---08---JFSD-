@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { AiOutlineFileText, AiOutlineForm } from 'react-icons/ai';
+import config from '../Main/config';
 
 export default function AdminHome() {
   const [adminData, setAdminData] = useState("");
@@ -15,7 +16,7 @@ export default function AdminHome() {
 
     const fetchCitizenCount = async () => {
       try {
-        const response = await fetch('http://localhost:2020/admin/citizencount');
+        const response = await fetch(`${config.url}/admin/citizencount`);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -28,7 +29,7 @@ export default function AdminHome() {
 
     const fetchPoliticianCount = async () => {
       try {
-        const response = await fetch('http://localhost:2020/admin/politiciancount');
+        const response = await fetch(`${config.url}/admin/politiciancount`);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }

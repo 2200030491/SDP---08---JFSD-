@@ -3,6 +3,7 @@ import axios from "axios";
 import "./NavBar.css";
 import { useNavigate } from "react-router-dom";
 
+import config from "./config";
 export default function CitizenLogin({ onCitizenLogin }) {
   const [formData, setFormData] = useState({
     email: "",
@@ -32,7 +33,7 @@ export default function CitizenLogin({ onCitizenLogin }) {
 
     try {
       // Send POST request to backend
-      const response = await axios.post("http://localhost:2020/citizen/citizenlogin", null, {
+      const response = await axios.post(`${config.url}/citizen/citizenlogin`, null, {
         params: {
           email: formData.email,
           password: formData.password,

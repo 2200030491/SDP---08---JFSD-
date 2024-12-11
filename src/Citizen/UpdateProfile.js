@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./CitizenProfile.css";
+import config from "../Main/config";
 
 const UpdateProfile = () => {
   const [formData, setFormData] = useState({
@@ -32,7 +33,7 @@ const UpdateProfile = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.put(`http://localhost:2020/citizen/updatecitizen/${formData.id}`, formData);
+      const response = await axios.put(`${config.url}/citizen/updatecitizen/${formData.id}`, formData);
 
       if (response.status === 200) {
         setMessage("Profile updated successfully!");

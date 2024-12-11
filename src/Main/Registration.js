@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import  config  from './config';
 
 const Registration = () => {
     const [formData, setFormData] = useState({
@@ -83,7 +84,7 @@ const Registration = () => {
 
         try {
             // Make POST request to backend
-            const response = await axios.post('http://localhost:2020/citizen/register', formData);
+            const response = await axios.post(`${config.url}/citizen/register`, formData);
             if (response.status === 200) {
                 setMessage('Registration successful!');
                 // Reset form data

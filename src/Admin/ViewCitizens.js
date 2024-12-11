@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Admin.css"; // Optional CSS for styling
 import { useNavigate } from "react-router-dom";
-
+import config from "../Main/config";
 export default function ViewCitizens() {
   const [citizens, setCitizens] = useState([]);
   const [error, setError] = useState("");
@@ -12,7 +12,7 @@ export default function ViewCitizens() {
   useEffect(() => {
     const fetchCitizens = async () => {
       try {
-        const response = await axios.get("http://localhost:2020/admin/viewallcitizens");
+        const response = await axios.get(`${config.url}/admin/viewallcitizens`);
         setCitizens(response.data);
       } catch (error) {
         console.error("Error fetching citizens:", error);
