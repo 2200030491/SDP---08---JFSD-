@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './CitizenNavBar.css';
 import  config  from '../Main/config';
+
 export default function CitizenHome() {
   const [citizenData, setCitizenData] = useState('');
   const [issues, setIssues] = useState([]);

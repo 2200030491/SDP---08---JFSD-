@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import  config  from './config';
 
+
 const Registration = () => {
     const [formData, setFormData] = useState({
         name: '',
