@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import config from '../Main/config';
+
 export default function Politician() {
   const [politician, setPolitician] = useState(null);
   const { id } = useParams();

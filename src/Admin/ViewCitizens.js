@@ -3,6 +3,7 @@ import axios from "axios";
 import "./Admin.css"; // Optional CSS for styling
 import { useNavigate } from "react-router-dom";
 import config from "../Main/config";
+
 export default function ViewCitizens() {
   const [citizens, setCitizens] = useState([]);
   const [error, setError] = useState("");

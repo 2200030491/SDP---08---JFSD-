@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { config } from '../Main/config';
+import  config  from '../Main/config';
 
 const AddCitizen = () => {
     const [formData, setFormData] = useState({
